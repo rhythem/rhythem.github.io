@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Webpage</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<link href="style.css" rel="stylesheet" type='text/css'>
+</head>
+<body>
+	<div id="page-wrap">
+		<div id="Container">
+			<div id="InnerWrap">
+				<div id="HeadContainer">
+					<div id="TopBarWrapper">
+						<div id="TopBarContainer" >
+							<div id="TopBar" class="clearfix">
+								<ul class="lfloat menu">
+									<li>
+										<a href="#news">News</a>
+									</li>
+									<li>
+										<a href="#messages">Messages</a>
+									</li>
+									<li>
+										<a href="#events">Events</a>
+									</li>
+									<li>
+										<a href="#photos">Photos</a>
+									</li>
+									<li>
+										<a href="#friends">Find Friends</a>
+									</li>
+								</ul>
+								<ul class="rfloat menu">
+									<li id="search">
+										<a href="#news">Find Friends</a>
+									</li>
+									<li id="search-box">
+										<span>
+											<input type="text" placeholder="Search" />
+											<span id="ico"><i id="search-ico"></i></span>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="SecondBar">
+						<div id="SecondBarContainer" class="clearfix">
+							<ul class="lfloat menu2">
+								<li id="slider-img" class="hide highlighted">
+									<img src="slide.png">
+								</li>
+								<li id="username">
+									<a href="#">Malessa Adams</a>
+								</li>
+								<li class="button">
+									<a href="#timeline">Timeline</a>
+								</li>
+								<li class="button">
+									<a href="#about">About</a>
+								</li>
+								<li class="button">
+									<a href="#photos">Photos</a>
+								</li>
+								<li class="button">
+									<a href="#likes">Likes(33)</a>
+								</li>
+								<li class="button">
+									<a href="#events">Events(3)</a>
+								</li>
+							</ul>
+							<ul class="rfloat menu2 white">
+								<li>
+									<a href="#">
+										<img src="friend.png">
+										Add Friend
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<img src="message.png">
+										Message
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="main-container">
+					<div class="timeline-container">
+						<div class="timeline">
+							<div id="month-navigation">
+								<div id="month-bar" class="clearfix">
+									<ul class="lfloat">
+										<li><a href="#">December  (6)</a></li>
+									</ul>
+									<ul class="feed-buttons clearfix">
+										<li class="border-right">Next</li>
+										<li class="border-right arrow">
+											<img src="left.png">
+										</li>
+										<li class="arrow right">
+											<img src="right.png">
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="content">
+								<div class="content-inner clearfix">
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													11
+												</div>
+												<div class="day">
+													MON
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													12
+												</div>
+												<div class="day">
+													TUE
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="event-birthday event-column lfloat">
+										<div class="feed-date-container feed-birthday">
+											<div class="date-inner">
+												<div class="date">
+													13
+												</div>
+												<div class="day">
+													WED
+												</div>
+											</div>
+										</div>
+										<div class="feed-event-container">
+											<div class="feed-event-inner">
+												<div class="content-text">
+													<div><img src="birthday.jpg"></div>
+													<div><b>Eric Peter's</b> Birthday</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													14
+												</div>
+												<div class="day">
+													FRI
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													15
+												</div>
+												<div class="day">
+													SAT
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													16
+												</div>
+												<div class="day">
+													SUN
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="event-column event-event lfloat">
+										<div class="feed-date-container feed-event">
+											<div class="date-inner">
+												<div class="date">
+													17
+												</div>
+												<div class="day">
+													MON
+												</div>
+											</div>
+										</div>
+										<div class="feed-event-container">
+											<div class="feed-event-inner feed-event-nopad">
+												<div class="content-text">
+													<div class="event-image">
+														<img src="event.jpg">
+													</div>
+													<div class="event-info">
+													<div class="event-schedule clearfix">
+														<div class="lfloat">
+														<img src="day.png"><b>Friday</b>
+														</div>
+														<div class="time lfloat">
+														<img src="clock.png">7:00 PM
+														</div>
+													</div>
+													<div class="event-controls clearfix">
+														<div class="lfloat">
+														<img src="control.png"><b>Join</b>
+														</div>
+														<div class="lfloat">
+														<img src="control.png"><b>Maybe</b>
+														</div>
+
+													</div>
+													<div class="venue">
+														<div>
+															&copy;Riverside, Brisbane
+														</div>
+													</div>
+													<div class="event-highlights">
+														<div>
+															Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..
+														</div>
+													</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													18
+												</div>
+												<div class="day">
+													TUE
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													19
+												</div>
+												<div class="day">
+													WED
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													20
+												</div>
+												<div class="day">
+													THU
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													21
+												</div>
+												<div class="day">
+													FRI
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="event-birthday event-column lfloat">
+										<div class="feed-date-container feed-birthday">
+											<div class="date-inner">
+												<div class="date">
+													22
+												</div>
+												<div class="day">
+													SAT
+												</div>
+											</div>
+										</div>
+										<div class="feed-event-container">
+											<div class="feed-event-inner">
+												<div class="content-text">
+													<div><img src="birthday.jpg"></div>
+													<div><b>Peter Lawrence's</b> Birthday</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													23
+												</div>
+												<div class="day">
+													SUN
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													24
+												</div>
+												<div class="day">
+													MON
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="event-birthday event-column lfloat">
+										<div class="feed-date-container feed-birthday">
+											<div class="date-inner">
+												<div class="date">
+													25
+												</div>
+												<div class="day">
+													TUE
+												</div>
+											</div>
+										</div>
+										<div class="feed-event-container">
+											<div class="feed-event-inner">
+												<div class="content-text">
+													<div><img src="birthday.jpg"></div>
+													<div><b>Maria Adams's</b> Birthday</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													26
+												</div>
+												<div class="day">
+													WED
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													27
+												</div>
+												<div class="day">
+													THU
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													28
+												</div>
+												<div class="day">
+													FRI
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div id="1" class="no-event-column lfloat">
+										<div class="no-feed-date-container">
+											<div class="date-inner">
+												<div class="date">
+													29
+												</div>
+												<div class="day">
+													SAT
+												</div>
+											</div>
+										</div>
+										<div class="no-feed-event-container">
+											<div class="feed-event-inner">
+												<div class="no-content-text">
+													<span class="content-plan">
+														<span class="content-month">December:</span>
+														 Nothing Planned
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="left-pannel-container" id="left-panel">
+						<div class="panel">
+							<div id="profile" class="clearfix">
+								<div id="profile-pic" class="lfloat">
+									<img src="images.jpg">
+								</div>
+								<div id="profile-link" class="white lfloat">
+									<div>
+										<a href="#" class="link-unselected">Back To Profile</a>
+									</div>
+									<div>
+										<a href="#" class="selected">About Me</a>
+									</div>
+								</div>
+							</div>
+							<div id="timeline-menu">
+								<div id="months">
+									<div>
+										<span><a href="#">December (6)</a></span>
+										<ul id="events">
+											<li><a href="#">House Warnings</a></li>
+											<li><a href="#">B-Day Drinks</a></li>
+											<li><a class="selected" href="#">Chemical Brothers</a></li>
+											<li><a href="#">Ministery of Sound</a></li>
+											<li><a href="#">Afternoon BBQ</a></li>
+											<li><a href="#">Pool Party</a></li>
+										</ul>
+									</div>
+									<div><span><a href="#">November (3)</a></span></div>
+									<div><span><a href="#">October (4)</a></span></div>
+									<div><span><a href="#">September (2)</a></span></div>
+									<div><span><a href="#">August (3)</a></span></div>
+								</div>
+							</div>
+							
+						</div>
+						<div id="account-menu">
+								<div><span><a class="white" href="#">Manage Accounts</a></span></div>
+								<div><span><a href="#">Advertise on Facebook</a></span></div>
+								<div><span><a href="#">Account Settings</a></span></div>
+								<div><span><a href="#">Privacy Settings</a></span></div>
+						</div>
+						<div id="logout">
+						<div>
+							<span>
+								<img src="logout.png">
+								<a href="#">Logout</a>
+							</span>
+						</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
