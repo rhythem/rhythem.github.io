@@ -265,6 +265,15 @@ ul li.highlighted {
 	min-height:100%;
 	position:relative;
 }
+#Footer{
+	position:absolute;
+	bottom:0;
+	right:0;
+	background:#000000;
+	color:#FFFFFF;
+	font-size:15px;
+
+}
 #month-navigation{
 	height:42px;
 	
