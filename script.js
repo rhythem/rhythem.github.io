@@ -2,7 +2,6 @@ $(document).ready(function(){
 	$("ul.menu li a").click(function(){
 		$("ul.menu li a").css("color","#9AA9C9");
 		$(this).css("color","#FFFFFF");
-
 	});
 	$("ul.menu2 li.button").click(function(){
 		$("ul.menu2 li.button").removeClass("highlighted");
@@ -32,8 +31,5 @@ $(document).ready(function(){
 			},200);
 			$(this).addClass('hide');
 		}
-		
-
 	});
-
 });
