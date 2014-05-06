@@ -269,9 +269,10 @@ ul li.highlighted {
 	position:absolute;
 	bottom:0;
 	right:0;
-	background:#000000;
+	padding:20px;
+	background:#d35400;
 	color:#FFFFFF;
-	font-size:15px;
+	font-size:17px;
 }
 #month-navigation{
 	height:42px;
