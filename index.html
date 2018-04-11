@@ -80,7 +80,7 @@
           rightPanely,
           player1 = 0,
           player2 = 0,
-          ai = 20,
+          ai = 10,
           refreshIntervalId;
 
       $(document).ready(function(){
@@ -139,7 +139,7 @@
             } else {
                 player2++;
                 $('#playerScore').html(player2);
-                if(player2 >= 10) {
+                if(player2 >= 5) {
                     $('#myModal').modal('show');
                     clearInterval(refreshIntervalId);
                 }
