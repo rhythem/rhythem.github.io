@@ -1,0 +1,187 @@
+<!-- Created By  - r8b8 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <link href="https://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
+    <style type="text/css">
+
+      body {
+        font-family: 'Hi Melody', cursive;
+      }
+
+      .names {
+        font-size: 40px;
+      }
+
+      .scores {
+        font-size : 51px;
+        color:red;
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div class="row" style="margin-top: 8%;margin-left: 21%;">
+        <canvas id='game' width='600' height='400'></canvas>
+      </div>
+      <div class="row" style="text-align: center;width: 50%;margin-left: 21%;margin-top: 2%;">
+          <div class="col-md-6">
+            <div class="row names">AI</div>
+            <div class="row scores" id="aiScore">0</div>
+          </div>
+          <div class="col-md-6">
+            <div class="row names">Player</div>
+            <div class="row scores" id="playerScore">0</div>
+          </div>
+      </div>
+      <div class="modal fade-scale" id="myModal" style="margin-top:5%;">
+        <div class="modal-dialog">
+            <div class="modal-content" style="width: 550px;">
+                <div class="modal-body" style="padding: 5%;">
+                    <div class="row" id="someText" style="text-align:center;">
+                        <p style="font-size:25px;color:red">Congrats ! you just won a knife.</p>
+                    </div>
+                    <div class="row" id="knife">
+                        <img src="https://vignette.wikia.nocookie.net/cswikia/images/0/09/CSGO_T_knife.png">
+                    </div>
+                    <div class="row" id="doge" style="display:none;">
+                      <iframe src="https://giphy.com/embed/ZO8upuwNKfpm0" width="506" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/dog-jezebel-groupthink-ZO8upuwNKfpm0">via GIPHY</a></p>
+                    </div>
+                    <div class="row" style="margin-top:4%;text-align: center;" id="btnBottom">
+                        <span><button class="btn btn-default" id="redeem" style="font-size:40px;color: red;">Redeem</button></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script type="text/javascript">
+      
+      var game,
+          gameContext,
+          ballx,
+          bally,
+          ballxv=5,
+          ballyv=5,
+          ballWidth = 20,
+          ballHeight = 20,
+          panelWidth = 20,
+          panelHeight = 80,
+          leftPanelx,
+          leftPanely,
+          rightPanelx,
+          rightPanely,
+          player1 = 0,
+          player2 = 0,
+          ai = 2,
+          refreshIntervalId;
+
+      $(document).ready(function(){
+          game = document.getElementById("game");
+          gameContext =  game.getContext("2d");
+          ballx = game.width/2;
+          bally = game.height/2;
+          leftPanelx = 0;
+          leftPanely = game.height/2-(panelHeight/2);
+          rightPanelx = game.width - ballWidth;
+          rightPanely = game.height/2-(panelHeight/2);
+          game.addEventListener('mousemove',function(e){
+              rightPanely = e.clientY - panelHeight - panelHeight/2;
+              if(rightPanely > game.height/2){
+                  rightPanely = Math.min(game.height - panelHeight,rightPanely);
+              } else {
+                  rightPanely = Math.max(0,rightPanely);
+              }
+          })
+          refreshIntervalId  = setInterval(update,1000/60);
+      })
+
+      function update(){
+        ballx += ballxv;
+        bally += ballyv;
+        if(bally+ballHeight >= game.height){
+          if(bally+ballHeight >= game.height){
+            ballyv = -ballyv;
+          }
+          bally += ballyv;
+        }
+        if(bally <= 0){
+          if(bally <= 0){
+            ballyv = -ballyv;
+          }
+          bally += ballyv;
+        }
+
+        if(ballx + ballWidth >= game.width){
+            if(bally+ballHeight >= rightPanely && bally <= rightPanely+panelHeight){
+                ballxv = -ballxv;
+                loly = bally - (rightPanely+panelHeight/2);
+                ballyv = loly * 0.33;
+            } else {
+                player1++;
+                $('#aiScore').html(player1);
+                resetRound();
+            }
+        }
+
+        if(ballx  <= 0){
+            if(bally +ballHeight >= leftPanely && bally <= leftPanely+panelHeight){
+                ballxv = -ballxv;
+                loly = bally - (leftPanely+panelHeight/2);
+                ballyv = loly * 0.33;
+            } else {
+                player2++;
+                $('#playerScore').html(player2);
+                if(player2 >= 2) {
+                    $('#myModal').modal('show');
+                    clearInterval(refreshIntervalId);
+                }
+                resetRound();
+            }
+        }
+
+        if(leftPanely+panelHeight/2 < bally){
+          leftPanely += ai;
+        } else {
+          leftPanely -= ai;
+        }
+        if(leftPanely > game.height/2){
+                  leftPanely = Math.min(game.height - panelHeight,leftPanely);
+        } else {
+            leftPanely = Math.max(0,leftPanely);
+        }
+        
+        gameContext.fillStyle = 'black';
+        gameContext.fillRect(0,0,game.width,game.height);
+        gameContext.fillStyle = 'grey';
+        gameContext.fillRect(leftPanelx,leftPanely,panelWidth,panelHeight);
+        gameContext.fillStyle = 'grey';
+        gameContext.fillRect(rightPanelx,rightPanely,panelWidth,panelHeight);
+        gameContext.fillStyle = 'yellow';
+        gameContext.fillRect(ballx,bally,ballWidth,ballHeight);
+      }
+
+      function resetRound(){
+          ballx = game.width/2;
+          bally = game.width/2;
+          ballxv = 5;
+          ballyv = 5;
+      }
+
+      $('#redeem').click(function(){
+          $('#image').attr('src','https://media.giphy.com/media/ZO8upuwNKfpm0/giphy.gif');
+          $('#knife').hide();
+          $('#someText').hide();
+          $('#btnBottom').hide();
+          $('#doge').show();
+      });
+    </script>
+</body>
+</html>
